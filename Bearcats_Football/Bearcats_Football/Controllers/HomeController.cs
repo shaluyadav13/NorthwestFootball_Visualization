@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Highsoft.Web.Mvc.Charts;
 
 namespace Bearcats_Football.Controllers
 {
@@ -12,13 +13,12 @@ namespace Bearcats_Football.Controllers
         {
             return View();
         }
-
+        
         //Returns view for the indexpage
         public ActionResult IndexPage()
         {
             return View();
         }
-
 
         public ActionResult About()
         {
@@ -33,5 +33,7 @@ namespace Bearcats_Football.Controllers
 
             return View();
         }
+
+       
     }
 }

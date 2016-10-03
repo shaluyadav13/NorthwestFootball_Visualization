@@ -48,7 +48,6 @@ C:\Users\s525138\Documents\northwest-football\Bearcats_Football\Bearcats_Footbal
 C:\Users\s525138\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\System.Web.WebPages.Razor.xml
 C:\Users\s525138\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\Antlr3.Runtime.pdb
 C:\Users\s525138\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\Newtonsoft.Json.xml
-C:\Users\s525138\Documents\northwest-football\Bearcats_Football\Bearcats_Football\obj\Debug\Bearcats_Football.csprojResolveAssemblyReference.cache
 C:\Users\s525138\Documents\northwest-football\Bearcats_Football\Bearcats_Football\obj\Debug\Bearcats_Football.dll
 C:\Users\s525138\Documents\northwest-football\Bearcats_Football\Bearcats_Football\obj\Debug\Bearcats_Football.pdb
 C:\Users\s525078\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\ApplicationInsights.config
@@ -111,3 +110,12 @@ C:\Users\s525078\Documents\northwest-football\Bearcats_Football\Bearcats_Footbal
 C:\Users\s525078\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\MongoDB.Bson.xml
 C:\Users\s525078\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\MongoDB.Driver.xml
 C:\Users\s525078\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\MongoDB.Driver.Legacy.xml
+C:\Users\s525138\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\MongoDB.Bson.dll
+C:\Users\s525138\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\MongoDB.Driver.Core.dll
+C:\Users\s525138\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\MongoDB.Driver.dll
+C:\Users\s525138\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\MongoDB.Driver.Legacy.dll
+C:\Users\s525138\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\MongoDB.Bson.xml
+C:\Users\s525138\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\MongoDB.Driver.xml
+C:\Users\s525138\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\MongoDB.Driver.Legacy.xml
+C:\Users\s525138\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\Highcharts.Web.Mvc.dll
+C:\Users\s525138\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\Highstock.Web.Mvc.dll
