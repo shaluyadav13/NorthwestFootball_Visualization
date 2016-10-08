@@ -4,11 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Highsoft.Web.Mvc.Charts;
+using Bearcats_Football.Models;
+
 
 namespace Bearcats_Football.Controllers
 {
     public class HomeController : Controller
     {
+        DBConnection db = new DBConnection();
         public ActionResult Index()
         {
             return View();
@@ -17,6 +20,7 @@ namespace Bearcats_Football.Controllers
         //Returns view for the indexpage
         public ActionResult IndexPage()
         {
+            db.getConnection();
             return View();
         }
 
