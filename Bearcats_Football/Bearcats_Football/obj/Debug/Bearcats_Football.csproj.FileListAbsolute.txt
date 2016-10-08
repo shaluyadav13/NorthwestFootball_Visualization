@@ -237,6 +237,6 @@ C:\Users\S524964\Desktop\GDP-Project\Bearcats_Football\Bearcats_Football\bin\Sys
 C:\Users\S524964\Desktop\GDP-Project\Bearcats_Football\Bearcats_Football\bin\System.Web.WebPages.Razor.xml
 C:\Users\S524964\Desktop\GDP-Project\Bearcats_Football\Bearcats_Football\bin\Antlr3.Runtime.pdb
 C:\Users\S524964\Desktop\GDP-Project\Bearcats_Football\Bearcats_Football\bin\Newtonsoft.Json.xml
+C:\Users\S524964\Desktop\GDP-Project\Bearcats_Football\Bearcats_Football\obj\Debug\Bearcats_Football.csprojResolveAssemblyReference.cache
 C:\Users\S524964\Desktop\GDP-Project\Bearcats_Football\Bearcats_Football\obj\Debug\Bearcats_Football.dll
 C:\Users\S524964\Desktop\GDP-Project\Bearcats_Football\Bearcats_Football\obj\Debug\Bearcats_Football.pdb
-C:\Users\S524964\Desktop\GDP-Project\Bearcats_Football\Bearcats_Football\obj\Debug\Bearcats_Football.csprojResolveAssemblyReference.cache
