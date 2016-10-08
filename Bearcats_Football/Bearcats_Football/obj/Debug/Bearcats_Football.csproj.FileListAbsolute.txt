@@ -244,3 +244,8 @@ C:\Users\s524975\Source\Repos\northwest-football\Bearcats_Football\Bearcats_Foot
 C:\Users\s524975\Source\Repos\northwest-football\Bearcats_Football\Bearcats_Football\bin\System.Net.Http.Formatting.dll
 C:\Users\s524975\Source\Repos\northwest-football\Bearcats_Football\Bearcats_Football\bin\System.Web.Http.xml
 C:\Users\s524975\Source\Repos\northwest-football\Bearcats_Football\Bearcats_Football\bin\System.Net.Http.Formatting.xml
+C:\Users\s525078\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\Highcharts.Web.Mvc.dll
+C:\Users\s525078\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\Highstock.Web.Mvc.dll
+C:\Users\s525078\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\System.Net.Http.Formatting.dll
+C:\Users\s525078\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\System.Web.Http.xml
+C:\Users\s525078\Documents\northwest-football\Bearcats_Football\Bearcats_Football\bin\System.Net.Http.Formatting.xml
