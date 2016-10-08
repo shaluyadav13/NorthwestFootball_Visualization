@@ -13,6 +13,7 @@ namespace Bearcats_Football.Models
         public IMongoDatabase database;
         public IMongoCollection<YearWiseGamesPlayed> getCollection()
         {
+            this.client = null;
             this.client = new MongoClient("mongodb://football:football@ds044679.mlab.com:44679/nwmsufootball");
             this.database = client.GetDatabase("nwmsufootball");
             var collection = database.GetCollection<YearWiseGamesPlayed>("yearwisegamesplayed");
