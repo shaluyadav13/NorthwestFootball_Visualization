@@ -16,7 +16,12 @@ namespace Bearcats_Football.Controllers
         {
             return View();
         }
-        
+
+        public ActionResult Glossary()
+        {
+            return View();
+        }
+
         //Returns view for the indexpage
         public ActionResult IndexPage()
         {
