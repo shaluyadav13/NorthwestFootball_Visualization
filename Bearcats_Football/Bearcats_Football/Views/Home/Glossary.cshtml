@@ -1,10 +1,9 @@
 ﻿@{
     ViewBag.Title = "Glossary";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+@*<h2>@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>*@
 
-<p>Use this area to provide additional information.</p>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,10 +15,112 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
         /* Remove the navbar's default rounded borders and increase the bottom margin */
+        .mod-table .mod-footer .foot-content ul {
+            float: left;
+            margin: 0 25px 10px 0;
+        }
+
+        .mod-table .mod-content {
+            padding: 0 !important;
+        }
+
+        .mod-no-header .mod-content {
+            border-top-width: 1px;
+        }
+
+
+        .stathead td, .stathead, .mod-content tr.stathead, .mod-content tr.stathead td, .mod-header, body.clubhouse .mod-calendar-month td.day.home div.day-top, body.clubhouse .mod-calendar-month tr.util td ul.key li span.home, body.nfl .mod-data-table .mod-header {
+            background: #06424D !important;
+        }
+
+            body.nfl .stathead td, body.nfl .stathead, body.afl .stathead td, body.afl .stathead {
+                background: #0f5b1a;
+                color: #fff;
+            }
+
+        body .stathead td, body .stathead, body.gen .stathead td, body.gen .stathead, body.espn .stathead td, body.espn .stathead {
+            background: #ad4a07;
+            color: #fff;
+        }
+
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent;
+        }
+
+        user agent stylesheet div {
+            display: block;
+        }
+
+
+
+
+        .mod-table .mod-footer .foot-header {
+            color: #fff;
+            font-family: Helvetica,sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .3px;
+            padding: 5px 8px 3px;
+            text-align: left;
+            margin: 0 2px;
+        }
+
+        .mod-content {
+            background: #fff;
+            font-size: 11px;
+            border-width: 0 1px;
+            border-color: #c2c2c2;
+            border-style: solid;
+            overflow: hidden;
+            padding: 2px;
+        }
+
         .mod-container {
             font-family: verdana,helvetica,arial,sans-serif;
             width: 100%;
             clear: both;
+        }
+
+        .mod-table .mod-footer .foot-content ul li span {
+            font-weight: 700;
+            color: #444;
+        }
+
+        body.clubhouse .mod-container h4 {
+            text-transform: uppercase;
+            font-family: helvetica,arial,sans-serif;
+            color: #fff;
+            line-height: 25px;
+            font-size: 12px;
+            letter-spacing: .3px;
+            margin: 0;
+            padding: 0 0 0 10px;
+            clear: both;
+            height: 25px;
+            overflow: hidden;
+        }
+
+        .mod-table .mod-content {
+            padding: 0 !important;
+        }
+
+        .mod-no-header .mod-content {
+            border-top-width: 1px;
+        }
+
+        .mod-footer {
+            background: #fff;
+            border-width: 0 1px 1px;
+            border-color: #c2c2c2;
+            border-style: solid;
+            text-align: right;
+            margin-bottom: 6px;
         }
 
         .mod-table .mod-footer .foot-header {
@@ -34,10 +135,10 @@
         }
 
         .mod-table .mod-footer .foot-content {
-    padding: 8px;
-    font-size: 11px;
-    overflow: hidden;
-}
+            padding: 8px;
+            font-size: 11px;
+            overflow: hidden;
+        }
 
         .navbar {
             margin-bottom: 50px;
@@ -56,6 +157,10 @@
         footer {
             background-color: #f2f2f2;
             padding: 25px;
+        }
+
+        element.style {
+            clear: both;
         }
     </style>
 </head>
