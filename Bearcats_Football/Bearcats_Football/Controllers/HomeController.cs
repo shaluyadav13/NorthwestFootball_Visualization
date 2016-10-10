@@ -12,15 +12,22 @@ namespace Bearcats_Football.Controllers
     public class HomeController : Controller
     {
         DBConnection db = new DBConnection();
+        YearWiseGamesPlayedConnection yws = new YearWiseGamesPlayedConnection();
         public ActionResult Index()
         {
             return View();
         }
-        
+
+        public ActionResult Glossary()
+        {
+            return View();
+        }
+
         //Returns view for the indexpage
         public ActionResult IndexPage()
         {
-            db.getConnection();
+            yws.getCollection();
+            //db.getConnection();
             return View();
         }
 
