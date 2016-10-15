@@ -175,11 +175,18 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AreaBasicController.cs" />
+    <Compile Include="Controllers\BarBasicController.cs" />
+    <Compile Include="Controllers\BarStackedController.cs" />
+    <Compile Include="Controllers\ColumnBasicController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LineBasicController.cs" />
     <Compile Include="Controllers\PieBasicController.cs" />
+    <Compile Include="Controllers\WaterfallController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Rushes.cs" />
     <Compile Include="Models\YearWiseGamesPlayed.cs" />
     <Compile Include="Models\DBConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -246,7 +253,13 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\IndexPage.cshtml" />
+    <Content Include="Views\BarStacked\BarStacked.cshtml" />
     <Content Include="Views\PieBasic\PieBasic.cshtml" />
+    <Content Include="Views\LineBasic\LineBasic.cshtml" />
+    <Content Include="Views\BarBasic\BarBasic.cshtml" />
+    <Content Include="Views\ColumnBasic\ColumnBasic.cshtml" />
+    <Content Include="Views\Waterfall\Waterfall.cshtml" />
+    <Content Include="Views\AreaBasic\AreaBasic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

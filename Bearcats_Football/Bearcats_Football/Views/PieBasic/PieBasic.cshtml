@@ -1,79 +1,11 @@
 ﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @using Highsoft.Web.Mvc.Charts
 
-<html>
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    @*<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>*@
-    <script src="@Url.Content("~/Scripts/bootstrap.min.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/script.js")" type="text/javascript"></script>
-    <script src="http://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    @*<script type="text/javascript">
-      $(function () {
-
-          $(document).ready(function () {
-
-              // Build the chart
-              $('#container').highcharts({
-                  chart: {
-                      plotBackgroundColor: null,
-                      plotBorderWidth: null,
-                      plotShadow: false,
-                      type: 'pie'
-                  },
-                  title: {
-                      text: 'Browser market shares January, 2015 to May, 2015'
-                  },
-                  tooltip: {
-                      pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-                  },
-                  plotOptions: {
-                      pie: {
-                          allowPointSelect: true,
-                          cursor: 'pointer',
-                          dataLabels: {
-                              enabled: false
-                          },
-                          showInLegend: true
-                      }
-                  },
-                  series: [{
-                      name: 'Brands',
-                      colorByPoint: true,
-                      data: [{
-                          name: 'Microsoft Internet Explorer',
-                          y: 56.33
-                      }, {
-                          name: 'Chrome',
-                          y: 24.03,
-                          sliced: true,
-                          selected: true
-                      }, {
-                          name: 'Firefox',
-                          y: 10.38
-                      }, {
-                          name: 'Safari',
-                          y: 4.77
-                      }, {
-                          name: 'Opera',
-                          y: 0.91
-                      }, {
-                          name: 'Proprietary or Undetectable',
-                          y: 0.2
-                      }]
-                  }]
-              });
-          });
-      });
-    </script>*@
-
-</head>
-<body>
-    @*<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>*@
-    @(Html.Highsoft().Highcharts(
+@(Html.Highsoft().Highcharts(
         new Highcharts
         {
             Chart = new Highsoft.Web.Mvc.Charts.Chart
@@ -89,7 +21,7 @@
             },
             Title = new Title
             {
-                Text = "Northwest win percentages in past five years"
+                Text = "Browser market shares at a specific website, 2014"
             },
             Tooltip = new Tooltip
             {
@@ -112,14 +44,11 @@
             {
                 new PieSeries
                 {
-                    Name = "wins",
+                    Name = "Browser Share",
                     Data = @ViewData["pieData"] as List<PieSeriesData>
                 },
 
             }
         }
         , "chart")
-    )
-</body>
-</html>
- 
+)
