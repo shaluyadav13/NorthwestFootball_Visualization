@@ -16,8 +16,9 @@ namespace Bearcats_Football.Models
         public IMongoDatabase database;
 
 
-        public IMongoDatabase getConnection()
+        public List<Rushes> getConnection()
         {
+            List<Rushes> rushesList = new List<Rushes>();
             this.client = new MongoClient("mongodb://football:football@ds044679.mlab.com:44679/nwmsufootball");
             this.database = client.GetDatabase("nwmsufootball");
             var collection = database.GetCollection<Test>("test");
@@ -25,14 +26,17 @@ namespace Bearcats_Football.Models
             var k = collection.Find(b => b._id.Equals(p)).ToListAsync().Result;
             foreach (var v in k)
             {
+                           
                 Debug.WriteLine("cccccccccccccccc" + v.rushes.count);
                 Debug.WriteLine(v.rushes.date);
-                Debug.WriteLine(v.rushes.opponent_team);
+                Debug.WriteLine(v.rushes.opponent_team);    
                 Debug.WriteLine(v.rushes.player_name);
-                
+
+                Rushes rushes = new Rushes() { count = v.rushes.count, date = Convert.ToDateTime(v.rushes.date), opponent_team = v.rushes.opponent_team, player_name = v.rushes.player_name };
+                rushesList.Add(rushes);
             }
-            
-            return this.database;
+
+            return rushesList;
         }
 
     }
