@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>NWMSU Football</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -23,6 +23,9 @@
         /* Remove the jumbotron's default bottom margin */
         .jumbotron {
             margin-bottom: 0;
+            margin-left: 17px;
+            padding: 20px;
+            right: 300px;
         }
 
         /* Add a gray background color and some padding to the footer */
@@ -54,15 +57,16 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Deals</a></li>
-                    <li><a href="#">Stores</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Player Stats</a></li>
+                    <li><a href="#">Roster</a></li>
+                    <li><a href="~/Home/Glossary">Glossary</a></li>
+                    @*<li><a href="#">Stores</a></li>
+                        <li><a href="#">Contact</a></li>*@
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-                </ul>
+                @*<ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                    </ul>*@
             </div>
         </div>
     </nav>
@@ -72,26 +76,22 @@
             <div class="col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading">2015</div>
-                    <div class="panel-body">
-                        <a href="~/PieBasic/PieBasic">
-                            <img src="~/Images/PieChartforWinIn2015.jpg" class="img-responsive" style="width:100%" alt="Image">
-                        </a>
-                    </div>
-                    <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+                    <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-footer">Click here to see the stats</div>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading">2014</div>
-                    <div class="panel-body"><img src="~/Images/PieChartforWinIn2015.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+                    <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-footer">Click here to see the stats</div>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading">2013</div>
-                    <div class="panel-body"><img src="~/Images/PieChartforWinIn2015.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+                    <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-footer">Click here to see the stats</div>
                 </div>
             </div>
         </div>
@@ -102,15 +102,15 @@
             <div class="col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading">2012</div>
-                    <div class="panel-body"><img src="~/Images/PieChartforWinIn2015.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+                    <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-footer">Click here to see the stats</div>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading">2011</div>
-                    <div class="panel-body"><img src="~/Images/PieChartforWinIn2015.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+                    <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-footer">Click here to see the stats</div>
                 </div>
             </div>
             @*<div class="col-sm-4">
@@ -124,11 +124,10 @@
     </div><br><br>
 
     <footer class="container-fluid text-center">
-        <p>Online Store Copyright</p>
+        <p>Northwest State University Copyright</p>
         <form class="form-inline">
-            Get deals:
-            <input type="email" class="form-control" size="50" placeholder="Email Address">
-            <button type="button" class="btn btn-danger">Sign Up</button>
+            @*<input type="email" class="form-control" size="50" placeholder="Email Address">
+                <button type="button" class="btn btn-danger">Sign Up</button>*@
         </form>
     </footer>
 
