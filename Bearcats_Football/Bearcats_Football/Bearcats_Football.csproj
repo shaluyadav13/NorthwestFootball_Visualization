@@ -187,6 +187,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Rushes.cs" />
+    <Compile Include="Models\Task1.cs" />
     <Compile Include="Models\YearWiseGamesPlayed.cs" />
     <Compile Include="Models\DBConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
