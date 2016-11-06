@@ -19,8 +19,6 @@
     @*<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>*@
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/script.js")" type="text/javascript"></script>
-    <script src="http://code.highcharts.com/highcharts.js"></script>
-    <script src="http://code.highcharts.com/modules/exporting.js"></script>
     <script>
         function myMap() {
             var mapCanvas = document.getElementById("map");
@@ -30,26 +28,6 @@
             }
             var map = new google.maps.Map(mapCanvas, mapOptions);
         }
-        $(function () {
-            $('#container').highcharts({
-
-                xAxis: {
-                    categories: ['Delhi', 'Mumbai', 'Chennai', 'Kolkatta']
-                },
-
-                series: [{
-                    data: [29.9, 71.5, 106.4, 129.2],
-                    type: 'column'
-                }]
-            });
-
-            $(document).ready(function () {
-                var chart = $('#container').highcharts();
-                chart.series[0].setData([29.9, 71.5, 106.4, 129.2, 148.5, 216.4, 194.1]);
-                chart.xAxis[0].setCategories(['Delhi', 'Mumbai', 'Chennai', 'Kolkatta', 'Hyderabad', 'Bengaluru', 'Chendigardh']);
-            });
-        });
-
     </script>
     @*<script src="http://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>*@
@@ -57,7 +35,7 @@
 
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-    <div id="container" style="height: 400px"></div>
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -108,7 +86,11 @@
     
 
     <!-- Go to Pie Chart-->
-    
+    <div id="container" style="width: 100%; height: auto; margin: 0 auto">
+
+        @Html.Action("IndexPage", "BarStacked")
+
+    </div>
     <!-- Container (The Band Section) -->
 
 

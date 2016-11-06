@@ -10,27 +10,38 @@
 @(Html.Highsoft().Highcharts(
         new Highcharts
         {
-            ID = "RushingChart",
             Chart = new Highsoft.Web.Mvc.Charts.Chart
             {
-                Width = 1000,
-                Height = 500
+                Width = 800,
+                Height = 400
             },
             Title = new Title
             {
-                Text = "Rushing data for " + @ViewData["playerName"].ToString().ToUpper() + " with different teams in year 2015"
+                Text = "Monthly Average Rainfall"
             },
             Subtitle = new Subtitle
             {
-                Text = ""
+                Text = "Source: WorldClimate.com"
             },
 
             XAxis = new List<XAxis>
             {
                 new XAxis
                 {
-
-                    Categories = @ViewData["opponents"] as List<String>
+                    Categories = new List<string> {
+                        "Jan",
+                        "Feb",
+                        "Mar",
+                        "Apr",
+                        "May",
+                        "Jun",
+                        "Jul",
+                        "Aug",
+                        "Sep",
+                        "Oct",
+                        "Nov",
+                        "Dec"
+                    }
                 }
             },
             YAxis = new List<YAxis>
@@ -40,14 +51,14 @@
                     Min = 0,
                     Title = new YAxisTitle
                     {
-                        Text = "Yards"
+                        Text = "Rainfall (mm)"
                     }
                 }
             },
             Tooltip = new Tooltip
             {
                 HeaderFormat = "<span style='font-size:10px'>{point.key}</span><table style='font-size:12px'>",
-                PointFormat = "<tr><td style='color:{series.color};padding:0'>{series.name}: </td><td style='padding:0'><b>{point.y:.1f}&nbsp;yards</b></td></tr>",
+                PointFormat = "<tr><td style='color:{series.color};padding:0'>{series.name}: </td><td style='padding:0'><b>{point.y:.1f}&nbsp;mm</b></td></tr>",
                 FooterFormat = "</table>",
                 Shared = true,
                 UseHTML = true
@@ -64,16 +75,10 @@
             {
                 new ColumnSeries
                 {
-                    Name = "Rushing",
-                    Data = @ViewData["yardRushData"] as List<ColumnSeriesData>
-                },
-                new ColumnSeries
-                {
-                    Name = "Receiving",
-                    Data = @ViewData["yardReceiveData"] as List<ColumnSeriesData>
-                }                
+                    Name = "Tokyo",
+                    Data = @ViewData["tokyoData"] as List<ColumnSeriesData>
+                }
             }
         }
         , "chart")
 )
-
