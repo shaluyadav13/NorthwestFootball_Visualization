@@ -11,8 +11,6 @@ namespace Bearcats_Football.Controllers
 {
     public class HomeController : Controller
     {
-        DBConnection db = new DBConnection();
-        YearWiseGamesPlayedConnection yws = new YearWiseGamesPlayedConnection();
         public ActionResult Index()
         {
             return View();
@@ -23,28 +21,13 @@ namespace Bearcats_Football.Controllers
             return View();
         }
 
-        //Returns view for the indexpage
-        public ActionResult IndexPage()
+        public ActionResult Player_Chart(string demo, string theme)
         {
-            yws.getCollection();
-            //db.getConnection();
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Demo = demo;
+            ViewBag.Theme = theme;
+            
 
             return View();
         }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
-       
     }
 }

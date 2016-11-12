@@ -37,24 +37,24 @@ namespace Bearcats_Football.Models
             
             return rushesList;
         }
-        public List<Summary> getConnection1()
-        {
-            List<Summary> summaryList = new List<Summary>();
-            this.client = new MongoClient("mongodb://football:football@ds044679.mlab.com:44679/nwmsufootball");
-            this.database = client.GetDatabase("nwmsufootball");
-            var collection = database.GetCollection<Task1>("test");
-            var p = "2014";
-            var k = collection.Find(b => b._id.Equals("rushes")).ToListAsync().Result;
-            int t = 0;
-            foreach (Task1 v in k)
-            {
-                for(int i =0;i< v.summary.Length;i++)
-                  summaryList.Add(v.summary[i]);
+        //public List<Summary> getConnection1()
+        //{
+        //    List<Summary> summaryList = new List<Summary>();
+        //    this.client = new MongoClient("mongodb://football:football@ds044679.mlab.com:44679/nwmsufootball");
+        //    this.database = client.GetDatabase("nwmsufootball");
+        //    var collection = database.GetCollection<Task1>("test");
+        //    var p = "2014";
+        //    var k = collection.Find(b => b._id.Equals("rushes")).ToListAsync().Result;
+        //    int t = 0;
+        //    foreach (Task1 v in k)
+        //    {
+        //        for(int i =0;i< v.summary.Length;i++)
+        //          summaryList.Add(v.summary[i]);
                
-            }
+        //    }
 
-            return summaryList;
-        }
+        //    return summaryList;
+        //}
 
     }
     
