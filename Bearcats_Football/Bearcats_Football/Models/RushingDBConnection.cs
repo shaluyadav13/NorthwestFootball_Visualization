@@ -15,15 +15,15 @@ namespace Bearcats_Football.Models
         public MongoClient client;
         public IMongoDatabase database;
 
-        public List<Rushing> getRushingConnection()
+        public List<Rushing> getRushingConnection(string name)
         {
             List<Rushing> rushingList = new List<Rushing>();
           
             this.client = new MongoClient("mongodb://football:football@ds044679.mlab.com:44679/nwmsufootball");
             this.database = client.GetDatabase("nwmsufootball");
             var collection = database.GetCollection<Rootobject>("individualplayerdetails");
-            var p = "Grove,Jordan";
-            var year = collection.Find(b => b._id.Equals(p)).ToListAsync().Result;
+           // var p = "Grove,Jordan";
+            var year = collection.Find(b => b._id.Equals(name)).ToListAsync().Result;
             foreach (Rootobject v in year)
             {
                 
@@ -48,15 +48,16 @@ namespace Bearcats_Football.Models
 
             return rushingList;
         }
-        public List<Recieving> getRecievingConnection()
+
+        public List<Recieving> getRecievingConnection(string name)
         {
             
             List<Recieving> recievingList = new List<Recieving>();
             this.client = new MongoClient("mongodb://football:football@ds044679.mlab.com:44679/nwmsufootball");
             this.database = client.GetDatabase("nwmsufootball");
             var collection = database.GetCollection<Rootobject>("individualplayerdetails");
-            var p = "Grove,Jordan";
-            var year = collection.Find(b => b._id.Equals(p)).ToListAsync().Result;
+           // var p = "Grove,Jordan";
+            var year = collection.Find(b => b._id.Equals(name)).ToListAsync().Result;
             foreach (Rootobject v in year)
             {
 
@@ -80,6 +81,22 @@ namespace Bearcats_Football.Models
 
             return recievingList;
         }
+
+        public List<string> getPlayerNamesConnection(int yr)
+        {
+            List<string> playerNameList = new List<string>();
+            this.client = new MongoClient("mongodb://football:football@ds044679.mlab.com:44679/nwmsufootball");
+            this.database = client.GetDatabase("nwmsufootball");
+            var collection = database.GetCollection<Rootobject>("individualplayerdetails");
+            var year = collection.Find(b => b.year == yr).ToListAsync().Result;
+            foreach (Rootobject v in year)
+            {
+                String id = v._id;
+                playerNameList.Add(id);
+               
+            }
+            return playerNameList;
+        }
     }
 }
 
@@ -88,6 +105,7 @@ namespace Bearcats_Football.Models
 public class Rootobject
 {
     public string _id { get; set; }
+    public int year { get; set; }
     public Year2015[] Year2015 { get; set; }
 }
 

@@ -240,6 +240,7 @@ C:\Users\s524975\Source\Repos\northwest-football\Bearcats_Football\Bearcats_Foot
 C:\Users\s524975\Source\Repos\northwest-football\Bearcats_Football\Bearcats_Football\bin\Newtonsoft.Json.xml
 C:\Users\s524975\Source\Repos\northwest-football\Bearcats_Football\Bearcats_Football\obj\Debug\Bearcats_Football.dll
 C:\Users\s524975\Source\Repos\northwest-football\Bearcats_Football\Bearcats_Football\obj\Debug\Bearcats_Football.pdb
+C:\Users\s524975\Source\Repos\northwest-football\Bearcats_Football\Bearcats_Football\obj\Debug\Bearcats_Football.csprojResolveAssemblyReference.cache
 C:\Users\s525138\Source\Repos\northwest-football\Bearcats_Football\Bearcats_Football\bin\ApplicationInsights.config
 C:\Users\s525138\Source\Repos\northwest-football\Bearcats_Football\Bearcats_Football\bin\roslyn\csc.exe
 C:\Users\s525138\Source\Repos\northwest-football\Bearcats_Football\Bearcats_Football\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -299,4 +300,4 @@ C:\Users\s525138\Source\Repos\northwest-football\Bearcats_Football\Bearcats_Foot
 C:\Users\s525138\Source\Repos\northwest-football\Bearcats_Football\Bearcats_Football\bin\Newtonsoft.Json.xml
 C:\Users\s525138\Source\Repos\northwest-football\Bearcats_Football\Bearcats_Football\obj\Debug\Bearcats_Football.dll
 C:\Users\s525138\Source\Repos\northwest-football\Bearcats_Football\Bearcats_Football\obj\Debug\Bearcats_Football.pdb
-C:\Users\s524975\Source\Repos\northwest-football\Bearcats_Football\Bearcats_Football\obj\Debug\Bearcats_Football.csprojResolveAssemblyReference.cache
+C:\Users\s525138\Source\Repos\northwest-football\Bearcats_Football\Bearcats_Football\obj\Debug\Bearcats_Football.csprojResolveAssemblyReference.cache
