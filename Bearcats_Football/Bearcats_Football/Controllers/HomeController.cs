@@ -16,6 +16,11 @@ namespace Bearcats_Football.Controllers
             return View();
         }
 
+        public ActionResult TempHomePage()
+        {
+            return View();
+        }
+
         public ActionResult Glossary()
         {
             return View();
@@ -25,8 +30,6 @@ namespace Bearcats_Football.Controllers
         {
             ViewBag.Demo = demo;
             ViewBag.Theme = theme;
-            
-
             return View();
         }
     }
