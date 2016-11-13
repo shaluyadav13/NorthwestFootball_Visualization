@@ -261,6 +261,7 @@
     <Content Include="Views\Waterfall\Waterfall.cshtml" />
     <Content Include="Views\AreaBasic\AreaBasic.cshtml" />
     <Content Include="Views\Home\Player_Chart.cshtml" />
+    <Content Include="Views\Home\TempHomePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
