@@ -15,10 +15,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
         /* Remove the navbar's default rounded borders and increase the bottom margin */
-        .mod-table .mod-footer .foot-content ul {
-            float: left;
-            margin: 0 25px 10px 0;
+
+        .mod-table .mod-footer {
+            text-align: left;
+            margin-bottom: 6px;
+            overflow: hidden;
         }
+
+            .mod-table .mod-footer .foot-content ul {
+                float: left;
+                margin: 0 25px 10px 0;
+            }
+
+                .mod-table .mod-footer .foot-content ul li {
+                    padding-bottom: 4px;
+                }
 
         .mod-table .mod-content {
             padding: 0 !important;
@@ -28,15 +39,22 @@
             border-top-width: 1px;
         }
 
+        .mod-table .mod-footer .foot-content ul li span {
+            font-weight: 700;
+            color: #444;
+        }
+
+
+
 
         .stathead td, .stathead, .mod-content tr.stathead, .mod-content tr.stathead td, .mod-header, body.clubhouse .mod-calendar-month td.day.home div.day-top, body.clubhouse .mod-calendar-month tr.util td ul.key li span.home, body.nfl .mod-data-table .mod-header {
             background: #06424D !important;
         }
 
-            body.nfl .stathead td, body.nfl .stathead, body.afl .stathead td, body.afl .stathead {
-                background: #0f5b1a;
-                color: #fff;
-            }
+        body.nfl .stathead td, body.nfl .stathead, body.afl .stathead td, body.afl .stathead {
+            background: #0f5b1a;
+            color: #fff;
+        }
 
         body .stathead td, body .stathead, body.gen .stathead td, body.gen .stathead, body.espn .stathead td, body.espn .stathead {
             background: #ad4a07;
@@ -57,7 +75,9 @@
             display: block;
         }
 
-
+        ol, ul {
+            list-style: none;
+        }
 
 
         .mod-table .mod-footer .foot-header {
@@ -185,10 +205,10 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li><a href="~/Home/Index">Home</a></li>
+                    <li><a href="#">Home</a></li>
                     <li><a href="#">Player Stats</a></li>
                     <li><a href="#">Roster</a></li>
-                    <li  class="active"><a href="~/Home/Glossary">Glossary</a></li>
+                    <li class="active"><a href="~/Home/Glossary">Glossary</a></li>
                     @*<li><a href="#">Stores</a></li>
                         <li><a href="#">Contact</a></li>*@
                 </ul>
@@ -207,7 +227,7 @@
                 <h4>GLOSSARY</h4>
             </div>
             <div class="foot-content">
-                <ol style="width:30%;">
+                <ul style="width:30%;">
                     <li><span>ATT:</span> Passing attempts</li>
                     <li><span>COMP:</span> Completions</li>
                     <li><span>PCT:</span> Completion percentage</li>
@@ -222,8 +242,8 @@
                     <li><span>SACK:</span> Sacks</li>
                     <li><span>YDSL:</span> Sacked yards lost</li>
                     <li><span>RATE:</span> Passer (QB) rating</li>
-                </ol>
-                <ol style="width:30%;">
+                </ul>
+                <ul style="width:30%;">
                     <li><span>ATT:</span> Rushing attempts</li>
                     <li><span>YDS:</span> Rushing yards</li>
                     <li><span>AVG:</span> Yards per rush attempt</li>
@@ -234,8 +254,8 @@
                     <li><span>FUM:</span> Rushing fumbles</li>
                     <li><span>FUML:</span> Rushing fumbles lost</li>
                     <li><span>1DN:</span> Rushing first downs</li>
-                </ol>
-                <ol style="width:30%;">
+                </ul>
+                <ul style="width:30%;">
                     <li><span>REC:</span> Receptions</li>
                     <li><span>TAR:</span> Receiving targets</li>
                     <li><span>YDS:</span> Receiving yards</li>
@@ -248,9 +268,9 @@
                     <li><span>FUML:</span> Receiving fumbles lost</li>
                     <li><span>YAC:</span> Yards after catch</li>
                     <li><span>1DN:</span> Receiving first downs</li>
-                </ol>
+                </ul>
                 <div style="clear:both;"></div>
-                <ol style="width:30%;">
+                <ul style="width:30%;">
                     <li><span>TOTAL:</span> First downs</li>
                     <li><span>RUSH:</span> Rushing first downs</li>
                     <li><span>PASS:</span> Passing first downs</li>
@@ -263,8 +283,8 @@
                     <li><span>PCT:</span> Percentage of fourth downs converted</li>
                     <li><span>TOTAL:</span> Total penalties</li>
                     <li><span>YDS:</span> Total penalty yards</li>
-                </ol>
-                <ol style="width:30%;">
+                </ul>
+                <ul style="width:30%;">
                     <li><span>SOLO:</span> Unassisted tackles</li>
                     <li><span>AST:</span> Assisted tackles</li>
                     <li><span>TOT:</span> Tackles</li>
@@ -280,8 +300,8 @@
                     <li><span>REC:</span> Fumbles recovered</li>
                     <li><span>TD:</span> Fumbles returned for touchdowns</li>
                     <li><span>BK:</span> Blocked kicks both punts and field goal attempts</li>
-                </ol>
-                <ol style="width:30%;">
+                </ul>
+                <ul style="width:30%;">
                     <li><span>ATT:</span> Kickoff return attempts</li>
                     <li><span>YDS:</span> Kickoff return yards</li>
                     <li><span>AVG:</span> Average yards per kickoff return</li>
@@ -293,9 +313,9 @@
                     <li><span>LONG:</span> Longest punt return</li>
                     <li><span>TD:</span> Punt return touchdowns</li>
                     <li><span>FC:</span> Fair catches</li>
-                </ol>
+                </ul>
                 <div style="clear:both;"></div>
-                <ol style="width:30%;">
+                <ul style="width:30%;">
                     <li><span>FGM:</span> Field goals made</li>
                     <li><span>FGA:</span> Field goal attempts</li>
                     <li><span>PCT:</span> Percentage of field goals made</li>
@@ -308,8 +328,8 @@
                     <li><span>XPM:</span> Extra points made</li>
                     <li><span>XPA:</span> Extra point attempts</li>
                     <li><span>PCT:</span> Percentage of extra points made</li>
-                </ol>
-                <l style="width:30%;">
+                </ul>
+                <ul style="width:30%;">
                     <li><span>PUNTS:</span> Total punts</li>
                     <li><span>YDS:</span> Gross punt yards</li>
                     <li><span>LONG:</span> Longest punt</li>
@@ -322,7 +342,7 @@
                     <li><span>RET:</span> Punts returned</li>
                     <li><span>RETY:</span> Yards returned on punts</li>
                     <li><span>AVG:</span> Average return yards on punts</li>
-                </l>
+                </ul>
             </div>
         </div>
     </div>
