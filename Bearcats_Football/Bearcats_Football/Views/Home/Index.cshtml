@@ -16,180 +16,232 @@
     <style>
 
         /* Remove the navbar's default rounded borders and increase the bottom margin */
-        .navbar {
+        /*.navbar {
             margin-bottom: 50px;
             border-radius: 0;
-        }
+        }*/
 
         /* Remove the jumbotron's default bottom margin */
-        .jumbotron {
+        /*.jumbotron {
             margin-bottom: 0;
             margin-left: 17px;
             padding: 20px;
             right: 300px;
-        }
+        }*/
 
         /* Add a gray background color and some padding to the footer */
-        footer {
+        /*footer {
             background-color: #f2f2f2;
             padding: 25px;
+        }*/
+
+        .video-container {
+            position: absolute; 
+            z-index: -99;
+            width: 100%;
+            height: 100%;
+            /*position: relative;*/
+            padding-bottom: 56.25%; /* 16:9 */
+            /*padding-top: 30px;*/ /* size of chrome */
+            /*height: 0;*/
+            overflow: hidden;
+            /*z-index: 1;*/
+            border-color: black;
         }
+            .video-container iframe,
+            .video-container object,
+            .video-container #overlay,
+            .video-container embed {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        #overlay {
+            position: absolute;
+            top: 100px;
+            color: aquamarine;
+            text-align: center;
+            font-size: 25px;
+            background-color: rgba(221, 221, 221, 0.0);
+            width: 640px;
+            padding: 10px 0;
+            z-index: 2147483647;
+            margin-top: 18em;
+            font-weight: bold;
+        }
+        @@keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+        @@-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+
+        h3, h4 {
+            margin: 10px 0 30px 0;
+            letter-spacing: 10px;
+            font-size: 25px;
+            color: aquamarine;
+        }
+        #mainBody{
+            /*background-color: transparent !important;*/
+            opacity: 0.25;
+        }
+
     </style>
 </head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+@*<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">*@
+<body>
+    <div>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
 
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#myPage">Bearcat Football</a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#myPage">Bearcat Football</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#myPage">HOME</a></li>
+                        <li><a href="#band">SEASONS</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                        <li><a href="~/Home/Glossary">GLOSSARY</a></li>
+                        @*<li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>*@
+                    </ul>
+                </div>
             </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#myPage">HOME</a></li>
-                    <li><a href="#band">SEASONS</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
-                </ul>
+        </nav>
+
+        <div class="wrapper tweak">
+            <div class="overlay">
+                <p>The Overlay Panel</p>
+            </div>
+            <div class="content">
+                <p>
+                    The main Content panel with a motif:
+                    <b>&hearts;</b> <b class="foggy">&spades;</b>
+                </p>
             </div>
         </div>
-    </nav>
-
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img src="~/Images/Bearcat1.jpg" alt="Bearcat glory" width="1200" height="700">
-                <div class="carousel-caption">
-                    <h3>2015 Celebrations</h3>
-                    <p>The winning moment.</p>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="~/Images/Bearcat2.jpg" alt="Bearcat glory 2" width="1200" height="700">
-                <div class="carousel-caption">
-                    <h3>Bearcats</h3>
-                    <p>Thank you, Bearcats - A night we won't forget.</p>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="~/Images/logo.jpg" alt="Los Angeles" width="660" height="420">
-                <div class="carousel-caption">
-                    <h3>Northwest</h3>
-                    <p>The best is yet to come.</p>
-                </div>
-            </div>
+        <div class ="video-container"> @*style="position: fixed; z-index: -99; width: 100%; height: 100%"*@
+            <iframe frameborder="0"
+                    src="https://www.youtube.com/v/I81_euY_62I?autoplay=1&loop=1&playlist=I81_euY_62I&title=0&byline=0&portrait=0" onload="this.width=screen.width;this.height=screen.height;"></iframe>
         </div>
 
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
+        @*<div class="video-container">
+            <iframe src="https://www.youtube.com/v/I81_euY_62I?autoplay=1&loop=1&playlist=I81_euY_62I&title=0&byline=0&portrait=0" allowfullscreen></iframe>
+            <div id="overlay">
+                @*<h3>"The world’s finest wilderness lies beneath the waves …"</h3>
+                <h3>— Wyland, Marine Life Artist</h3>*@
+        @*</div>
+            </div>*@
 
-    <div class="jumbotron">
-        <div class="container text-center">
-            <h1>Bearcat Football</h1>
-            @*<p>Data Visualization</p>*@
-        </div>
-    </div>
+        @*<div class="jumbotron">
+                <div class="container text-center">
+                    <h1>Bearcat Football</h1>
+                    <p>Data Visualization</p>
+                </div>
+            </div>*@
 
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Logo</a>
+        @*<nav class="navbar navbar-inverse navbar-fixed-top">
+            
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Logo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="~/Home/Index">Home</a></li>
+                        <li><a href="#">Player Stats</a></li>
+                        <li><a href="#">Roster</a></li>
+                        <li><a href="~/Home/Glossary">Glossary</a></li>
+                        <li><a href="#">Stores</a></li>
+                            <li><a href="#">Contact</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                        </ul>
+                </div>
             </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="~/Home/Index">Home</a></li>
-                    <li><a href="#">Player Stats</a></li>
-                    <li><a href="#">Roster</a></li>
-                    <li><a href="~/Home/Glossary">Glossary</a></li>
-                    @*<li><a href="#">Stores</a></li>
-                        <li><a href="#">Contact</a></li>*@
-                </ul>
-                @*<ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-                    </ul>*@
-            </div>
-        </div>
-    </nav>
+        </nav>*@
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">2015</div>
-                    <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">Click here to see the stats</div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">2014</div>
-                    <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">Click here to see the stats</div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">2013</div>
-                    <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">Click here to see the stats</div>
-                </div>
-            </div>
-        </div>
-    </div><br>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">2012</div>
-                    <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">Click here to see the stats</div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">2011</div>
-                    <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">Click here to see the stats</div>
-                </div>
-            </div>
-            @*<div class="col-sm-4">
+        <div id="mainBody" class="container">
+            <div class="row">
+                <div class="col-sm-4">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+                        <div class="panel-heading">2015</div>
+                        @*<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>*@
+                        <div class="panel-footer">Click here to see the stats</div>
                     </div>
-                </div>*@
-        </div>
-    </div><br><br>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">2014</div>
+                        @*<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>*@
+                        <div class="panel-footer">Click here to see the stats</div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">2013</div>
+                        @*<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>*@
+                        <div class="panel-footer">Click here to see the stats</div>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">2012</div>
+                        @*<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>*@
+                        <div class="panel-footer">Click here to see the stats</div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">2011</div>
+                        @*<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>*@
+                        <div class="panel-footer">Click here to see the stats</div>
+                    </div>
+                </div>
+                @*<div class="col-sm-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">BLACK FRIDAY DEAL</div>
+                            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+                        </div>
+                    </div>*@
+            </div>
+        </div><br><br>
+    </div>
 
     <footer class="container-fluid text-center">
         <p>Northwest Missouri State University Copyright</p>

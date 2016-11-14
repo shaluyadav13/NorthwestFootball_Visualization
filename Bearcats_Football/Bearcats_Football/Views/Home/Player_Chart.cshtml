@@ -18,97 +18,63 @@
     <script src="@Url.Content("~/Scripts/modernizr.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/script.js")" type="text/javascript"></script>
     <script type="text/javascript">
-        var example = 'line-basic',
-        theme = 'default';
+        $(document).ready(function () {
+            //alert("document ready occurred!");
+            var yr = 2015;
+            $.ajax({
+                url: '@Url.Action("getPlayerDetails", "Home", new { year = "2015" })',
+                dataType: "JSON",
+                type: "POST",
+                //data: {year:yr.toString()},
+                contentType: "application/json; charset=utf-8",
+                error: function (err) {
+                    alert("Error:" + err.toString());
+                },
+                success: function (data) {
+                    //alert("In success" + data);
+                    var showL = []
+                    showL = data.toString().split(",");
+                    var finalNames = [];
 
-        jQuery(document).ready(function () {
-
-            fixNavigation();
-
-            jQuery("#view-menu").click(function (e) {
-                jQuery("#wrap").toggleClass("toggled");
-            });
-            jQuery("#sidebar-close").click(function (e) {
-                jQuery("#wrap").removeClass("toggled");
-            });
-            // key listeners for the previous and next arrows
-            jQuery(document).keydown(function (e) {
-                var anchor;
-                if (e.target.tagName != 'INPUT') {
-                    if (e.keyCode == 39) {
-                        anchor = document.getElementById('next-example');
-
-                    } else
-                        if (e.keyCode == 37) {
-                            anchor = document.getElementById('previous-example');
-                        }
-
-                    if (anchor) {
-                        location.href = anchor.href;
+                    for (var i = 0, j = 0; i < showL.length; i += 2, j++) {
+                        finalNames[j] = showL[i] + "," + showL[i + 1];
+                        //alert("After split " + finalNames[j]);
                     }
+                    $("#divPlayerName").empty();
+                    var cList = $('#divPlayerName')
+                    // $.each(finalNames, function (index, u) {
+                    for (var i = 0; i < finalNames.length; i++) {
+                        //alert(i);
+                        //var li = $('<li/>').addClass('list-group-item').attr('role', 'menuitem').appendTo(cList);
+                        var a = $('<a/>').addClass('list-group-item').attr('id', finalNames[i]).attr('href', '/Home/Player_Chart?demo=' + finalNames[i].toString()).text(finalNames[i].toString()).on('click', function () {
+                            var name = $(this).text();
+                            //alert(name);
+                            @*@ViewBag.newName = name;
+                            alert(@ViewBag.newName);*@
+                            //$(this).attr('href', '@Url.Action("Player_Chart", "Home", new { demo = @ViewBag.newName } )');
+                            @*$("#container").empty();
+                            $("#container").html(@Html.Action("ColumnBasic", "ColumnBasic", new { name = @ViewBag.name }));*@
+                            //$.ajax({
+                            //    url: '/ColumnBasic/ColumnBasic/',
+                            //    dataType: "JSON",
+                            //    type: "POST",
+                            //    data: { name: name.toString()},
+                            //    contentType: "application/json; charset=utf-8",
+                            //    error: function (err) {
+                            //        alert("Error:" + err.toString());
+                            //    },
+                            //    success: function (data) {
+                            //        alert("In success" + data);
+                            //    }
+                            //    });
+                        }).appendTo(cList);
+                    }
+                    // });
+
                 }
-            });
-            // Bind event to style change switcher
-            jQuery('#switcher-selector').bind('change', function () {
-                var url = jQuery(this).val(); // get selected value
-                if (url) { // require a URL
-                    window.location = url; // redirect
-                }
-                return false;
             });
         });
 
-        function fixNavigation() {
-            var example = window.location.href.split("=")[1].split("&")[0];
-            var currentLink = exampleToHyphens(example);
-            var sideBar = $(".nav-sidebar");
-            var sideBarLinks = sideBar.find("li a");
-
-            sideBar.find("ul").css("display", "none");
-
-            $(".nav-sidebar li a").each(function (index, link) {
-                var href = $(link).attr("aria-label");
-                var hrefSplitArray = href.split("/");
-                var hrefTag = hrefSplitArray[hrefSplitArray.length - 1];
-
-                if (currentLink == hrefTag) {
-                    $(link).parent().addClass("active");
-                    $(link).parent().parent().css("display", "block");
-                    $(link).parent().parent().parent().addClass("active");
-
-                    $(".demo-name").html("<a href='#'>Highcharts Demos</a> &rsaquo; " + $(link).text());
-
-                    if (index < $(".nav-sidebar li a").length - 1) {
-                        var nextHref = $(sideBarLinks.get(index + 1)).attr("href");
-                        $(".chart-container").find("#next-example").attr("href", nextHref);
-                    }
-
-                    if (index > 0 ) {
-                        var prevHref = $(sideBarLinks.get(index - 1)).attr("href");
-                        $(".chart-container").find("#previous-example").attr("href", prevHref);
-                    }
-                }
-            });
-
-        }
-
-        function exampleToHyphens(word) {
-            var result = "";
-            for (var i = 0; i < word.length; i++) {
-                if (isUpperCase(word[i]) && i > 0) {
-                    result += "-" + word[i].toLowerCase();
-                }
-                else {
-                    result += word[i].toLowerCase();
-                }
-            }
-
-            return result;
-        }
-
-        function isUpperCase(character) {
-            return (character == character.toUpperCase());
-        }
     </script>
 </head>
 <body>
@@ -120,49 +86,32 @@
                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 cont">
                         <h2 class="demo-name"></h2>
                         @*<div class="btn-group theme">
-                            <a class="btn btn-theme @ViewBag.DefaultDisabled" href="?theme=default">Default</a>
-                            <a class="btn btn-theme @ViewBag.DarkUnicaDisabled" href="?theme=dark-unica">Dark Unica</a>
-                            <a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="?theme=sand-signika">Sand Signika</a>
-                            <a class="btn btn-theme @ViewBag.GridLightDisabled" href="?theme=grid-light">Grid Light</a>
-                        </div>*@
+                                <a class="btn btn-theme @ViewBag.DefaultDisabled" href="?theme=default">Default</a>
+                                <a class="btn btn-theme @ViewBag.DarkUnicaDisabled" href="?theme=dark-unica">Dark Unica</a>
+                                <a class="btn btn-theme @ViewBag.SandSignikaDisabled" href="?theme=sand-signika">Sand Signika</a>
+                                <a class="btn btn-theme @ViewBag.GridLightDisabled" href="?theme=grid-light">Grid Light</a>
+                            </div>*@
                     </div>
                     <div class="clearfix"></div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-9 sidebar">
+
+                @*<div class="col-lg-3 col-md-3 col-sm-3 col-xs-9 sidebar">
                     <ul class="nav nav-sidebar">
                         <li class="active">
-                            <div class="active"><span>Line charts</span><icon class="toggle"></icon></div>
-                            <ul style="display: block;">
-                                <li class="">
+                            @*<div class="active"><span>Line charts</span><icon class="toggle"></icon></div>*@
+                            @*<div style="display: block;" id="divPlayerName" class="list-group">
+                                @*<li class="">
                                     <a aria-label="http://www.highcharts.com/demo/column-basic" href="@Url.Action("Player_Chart", "Home", new { demo = "ColumnBasic", theme = ViewBag.Theme } )">Basic line						</a>
-                                </li>
-                                <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/column-basic" href="@Url.Action("Player_Chart", "Home", new { demo = "ColumnBasic", theme = ViewBag.Theme } )">Ajax loaded data, clickable points						</a>
-                                </li>
-                                <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/column-basic" href="@Url.Action("Player_Chart", "Home", new { demo = "ColumnBasic", theme = ViewBag.Theme } )">With data labels						</a>
-                                </li>
-                                <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/column-basic" href="@Url.Action("Player_Chart", "Home", new { demo = "ColumnBasic", theme = ViewBag.Theme } )">Time series, zoomable						</a>
-                                </li>
-                                <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/column-basic" href="@Url.Action("Player_Chart", "Home", new { demo = "ColumnBasic", theme = ViewBag.Theme } )">Spline with inverted axes						</a>
-                                </li>
-                                <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/column-basic" href="@Url.Action("Player_Chart", "Home", new { demo = "ColumnBasic", theme = ViewBag.Theme } )">Spline with symbols						</a>
-                                </li>
-                                <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/column-basic" href="@Url.Action("Player_Chart", "Home", new { demo = "ColumnBasic", theme = ViewBag.Theme } )">Spline with plot bands						</a>
-                                </li>
-                                <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/column-basic" href="@Url.Action("Player_Chart", "Home", new { demo = "ColumnBasic", theme = ViewBag.Theme } )">Time data with irregular intervals						</a>
-                                </li>
-                                <li class="">
-                                    <a aria-label="http://www.highcharts.com/demo/column-basic" href="@Url.Action("Player_Chart", "Home", new { demo = "ColumnBasic", theme = ViewBag.Theme } )">Logarithmic axis						</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                                @*</li>*@   
+                            @*</div>*@
+                       @* </li>*@
+                   @* </ul>*@
+               @*</div>*@
+                <div class="container col-lg-3 col-md-3 col-sm-3 col-xs-9 sidebar">
+                    <h3>List of players in 2015</h3>
+                    <div class="list-group" id="divPlayerName">
+                       
+                    </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-9 sidebar-fill"></div>
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 sidebar-eq demo">
@@ -174,38 +123,38 @@
                            href="http://www.highcharts.com/demo/line-ajax"><i class="fa fa-angle-right"></i></a>
                     </div>
                     @*<div id="small-switcher" class="visible-xs">
-                        <a class="button" id="view-menu" onclick="">Menu &raquo;</a>
-                        <select id="switcher-selector">
-                            <option value="http://www.highcharts.com/demo/line-basic" selected>Default theme</option>
-                            <option value="http://www.highcharts.com/demo/line-basic/dark-unica">Dark Unica</option>
-                            <option value="http://www.highcharts.com/demo/line-basic/sand-signika">Sand Signika</option>
-                            <option value="http://www.highcharts.com/demo/line-basic/grid-light">Grid Light</option>
-                        </select>
-                        <div class="clearfix"></div>
-                    </div>*@
-                
+                            <a class="button" id="view-menu" onclick="">Menu &raquo;</a>
+                            <select id="switcher-selector">
+                                <option value="http://www.highcharts.com/demo/line-basic" selected>Default theme</option>
+                                <option value="http://www.highcharts.com/demo/line-basic/dark-unica">Dark Unica</option>
+                                <option value="http://www.highcharts.com/demo/line-basic/sand-signika">Sand Signika</option>
+                                <option value="http://www.highcharts.com/demo/line-basic/grid-light">Grid Light</option>
+                            </select>
+                            <div class="clearfix"></div>
+                        </div>*@
+
                     <div id="container" style="width: 100%; height: auto; margin: 0 auto">
 
-                        @Html.Action("ColumnBasic", "ColumnBasic")
+                        @Html.Action("ColumnBasic", "ColumnBasic", new { name = (String)@ViewBag.name })
 
                     </div>
-                
+
                     @*<div id="demo-buttons">
-                        <a class="button" href="javascript:"
-                           onclick="hs.htmlExpand(this, { width: 800,
-					                headingText: 'Demo Controller Code',
-					                wrapperClassName: 'draggable-header' })">Controller Code &raquo;</a>
-                        <div class="highslide-maincontent" style="display:none">
-                            <pre>@ViewBag.ControllerCode</pre>
-                        </div>
-                        <a class="button" href="javascript:"
-                           onclick="hs.htmlExpand(this, { width: 800,
-					                headingText: 'Demo View Code',
-					                wrapperClassName: 'draggable-header' })">View Code &raquo;</a>
-                        <div class="highslide-maincontent" style="display:none">
-                            <pre>@ViewBag.ViewCode</pre>
-                        </div>
-                    </div>*@
+                            <a class="button" href="javascript:"
+                               onclick="hs.htmlExpand(this, { width: 800,
+                                        headingText: 'Demo Controller Code',
+                                        wrapperClassName: 'draggable-header' })">Controller Code &raquo;</a>
+                            <div class="highslide-maincontent" style="display:none">
+                                <pre>@ViewBag.ControllerCode</pre>
+                            </div>
+                            <a class="button" href="javascript:"
+                               onclick="hs.htmlExpand(this, { width: 800,
+                                        headingText: 'Demo View Code',
+                                        wrapperClassName: 'draggable-header' })">View Code &raquo;</a>
+                            <div class="highslide-maincontent" style="display:none">
+                                <pre>@ViewBag.ViewCode</pre>
+                            </div>
+                        </div>*@
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 sidebar-eq-fill"></div>
                 <div class="clearfix"></div>

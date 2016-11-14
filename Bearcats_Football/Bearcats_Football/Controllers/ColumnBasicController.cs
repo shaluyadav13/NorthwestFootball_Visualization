@@ -11,11 +11,11 @@ namespace Bearcats_Football.Controllers
     public partial class ColumnBasicController : Controller
     {
         // GET: ColumnNegative
-        public ActionResult ColumnBasic()
+        public ActionResult ColumnBasic(String name)
         {
             RushingDBConnection rushingDBConn = new RushingDBConnection();
-            List<Bearcats_Football.Models.Rushing> listRushing = rushingDBConn.getRushingConnection();
-            List<Bearcats_Football.Models.Recieving> listReceiving = rushingDBConn.getRecievingConnection();
+            List<Bearcats_Football.Models.Rushing> listRushing = rushingDBConn.getRushingConnection(name);
+            List<Bearcats_Football.Models.Recieving> listReceiving = rushingDBConn.getRecievingConnection(name);
             List<String> opponentsList = new List<string>();
             List<double> yardRushValues = new List<double>();
             List<double> yardReceiveValues = new List<double>();
