@@ -1,0 +1,78 @@
+﻿@*You need to add a reference to jQuery prior to referencing the highcharts javascript file*@
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+@using Highsoft.Web.Mvc.Charts
+
+@(Html.Highsoft().Highcharts(
+        new Highcharts
+        {
+            Chart = new Highsoft.Web.Mvc.Charts.Chart
+            {
+                Width = 800,
+                Height = 400
+            },
+            Title = new Title
+            {
+                Text = "Passing Visualization for " + @ViewData["playerName"].ToString().ToUpper() + " with different teams in year 2015"
+            },
+            Subtitle = new Subtitle
+            {
+                Text = ""
+            },
+            XAxis = new List<XAxis>
+            {
+                new XAxis
+                {
+                    Type = XAxisType.Category
+                }
+            },
+            YAxis = new List<YAxis>
+            {
+                new YAxis
+                {
+                    Title = new YAxisTitle
+                    {
+                        Text = "Total completed passes"
+                    }
+                }
+            },
+            Legend = new Legend
+            {
+                Enabled = false
+            },
+            Tooltip = new Tooltip
+            {
+                HeaderFormat = "<span style='font-size:11px'>{series.name}</span><br>",
+                PointFormat = "<span style='color:{point.color}'>{point.name}</span>: <b>{point.y:.2f}</b> of total<br/>"
+            },
+
+            PlotOptions = new PlotOptions
+            {
+                Series = new PlotOptionsSeries
+                {
+                    DataLabels = new PlotOptionsSeriesDataLabels
+                    {
+                        Enabled = true,
+                        Format = "{point.name}: {point.y:.1f}"
+                    }
+                }
+            },
+            Series = new List<Series>
+            {
+                new PieSeries
+                {
+                    Name = "Completed passes",
+                    Data = @ViewData["pieData"] as List<PieSeriesData>
+
+                }
+            },
+            Drilldown = new Drilldown
+            {
+                Series = @ViewData["drillList"] as List<Series>
+            }
+        }
+        , "chart")
+)
