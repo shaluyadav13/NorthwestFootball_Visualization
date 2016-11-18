@@ -11,28 +11,35 @@ namespace Bearcats_Football.Controllers
     public partial class BarStackedController : Controller
     {
         // GET: BarStacked
-        public ActionResult Index()
+        public ActionResult BarStacked(String name)
         {
-            return View();
-        }
+            RushingDBConnection rushingDBConn = new RushingDBConnection();
+            List<Bearcats_Football.Models.Tackles> listTackles = rushingDBConn.getTacklesConnection(name);
+            List<String> opponentsList = new List<string>();
+            List<int> soloTackleValues = new List<int>();
+            List<int> astTackleValues = new List<int>();
+            foreach (Bearcats_Football.Models.Tackles tackle in listTackles)
+            {
+                ViewData["playerName"] = tackle._id;
+                opponentsList.Add(tackle._opponent);
+                astTackleValues.Add(tackle._ast);
+                soloTackleValues.Add(tackle._solo);
+            }
 
-        public ActionResult BarStacked()
-        {
-            List<double?> johnValues = new List<double?> { 5, 3, 4, 7, 2 };
-            List<double?> janeValues = new List<double?> { 2, -2, -3, 2, 1 };
-            List<double?> joeValues = new List<double?> { 3, 4, 4, -2, 5 };
+            //List<double?> johnValues = new List<double?> { 5, 3, 4, 7, 2 };
+            //List<double?> janeValues = new List<double?> { 2, -2, -3, 2, 1 };
+            //List<double?> joeValues = new List<double?> { 3, 4, 4, -2, 5 };
 
-            List<BarSeriesData> johnData = new List<BarSeriesData>();
-            List<BarSeriesData> janeData = new List<BarSeriesData>();
-            List<BarSeriesData> joeData = new List<BarSeriesData>();
+            //List<BarSeriesData> johnData = new List<BarSeriesData>();
+            List<BarSeriesData> soloData = new List<BarSeriesData>();
+            List<BarSeriesData> astData = new List<BarSeriesData>();
 
-            johnValues.ForEach(p => johnData.Add(new BarSeriesData { Y = p }));
-            janeValues.ForEach(p => janeData.Add(new BarSeriesData { Y = p }));
-            joeValues.ForEach(p => joeData.Add(new BarSeriesData { Y = p }));
-
-            ViewData["johnData"] = johnData;
-            ViewData["janeData"] = janeData;
-            ViewData["joeData"] = joeData;
+            astTackleValues.ForEach(p => astData.Add(new BarSeriesData { Y = p }));
+            soloTackleValues.ForEach(p => soloData.Add(new BarSeriesData { Y = p }));
+            // joeValues.ForEach(p => joeData.Add(new BarSeriesData { Y = p }));
+            ViewData["opponents"] = opponentsList;
+            ViewData["astData"] = astData;
+            ViewData["soloData"] = soloData;
             return View();
         }
     }

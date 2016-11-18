@@ -18,7 +18,7 @@
             },
             Title = new Title
             {
-                Text = "Data Visualization for " + @ViewData["playerName"].ToString().ToUpper() + " with different teams in year 2015"
+                Text = "Rushing & Receiving Visualization for " + @ViewData["playerName"].ToString().ToUpper() + " with different teams in year 2015"
             },
             Subtitle = new Subtitle
             {
@@ -65,12 +65,14 @@
                 new ColumnSeries
                 {
                     Name = "Rushing",
-                    Data = @ViewData["yardRushData"] as List<ColumnSeriesData>
+                    Data = @ViewData["yardRushData"] as List<ColumnSeriesData>,
+                    Color = "#34af5d"
                 },
                 new ColumnSeries
                 {
                     Name = "Receiving",
-                    Data = @ViewData["yardReceiveData"] as List<ColumnSeriesData>
+                    Data = @ViewData["yardReceiveData"] as List<ColumnSeriesData>,
+                    Color = "#ce6204"
                 }                
             }
         }

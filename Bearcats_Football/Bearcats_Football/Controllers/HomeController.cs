@@ -22,12 +22,16 @@ namespace Bearcats_Football.Controllers
             return View();
         }
 
-        public ActionResult Player_Chart(string demo)
+        public ActionResult Player_Chart(string demo,string chartType)
         {
             if (demo == null)
                 ViewBag.name = "Foster,ShaCorey";
             else
             ViewBag.name = demo;
+            if (chartType == null)
+                ViewBag.type = "ColumnBasic";
+            else
+                ViewBag.type = chartType;
             // ViewBag.Theme = theme;
 
             return View();
@@ -39,6 +43,7 @@ namespace Bearcats_Football.Controllers
             RushingDBConnection rushDBConn = new RushingDBConnection();
             int yr = Convert.ToInt32(year);
             playerList = rushDBConn.getPlayerNamesConnection(yr);
+            playerList.Sort();
             return Json(playerList);
         }
     }
