@@ -14,7 +14,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
-
         /* Remove the navbar's default rounded borders and increase the bottom margin */
         /*.navbar {
             margin-bottom: 50px;
@@ -36,7 +35,7 @@
         }*/
 
         .video-container {
-            position: absolute; 
+            position: absolute;
             z-index: -99;
             width: 100%;
             height: 100%;
@@ -48,6 +47,7 @@
             /*z-index: 1;*/
             border-color: black;
         }
+
             .video-container iframe,
             .video-container object,
             .video-container #overlay,
@@ -58,6 +58,7 @@
                 width: 100%;
                 height: 100%;
             }
+
         #overlay {
             position: absolute;
             top: 100px;
@@ -71,21 +72,25 @@
             margin-top: 18em;
             font-weight: bold;
         }
+
         @@keyframes slide {
             0% {
                 opacity: 0;
                 -webkit-transform: translateY(70%);
             }
+
             100% {
                 opacity: 1;
                 -webkit-transform: translateY(0%);
             }
         }
+
         @@-webkit-keyframes slide {
             0% {
                 opacity: 0;
                 -webkit-transform: translateY(70%);
             }
+
             100% {
                 opacity: 1;
                 -webkit-transform: translateY(0%);
@@ -98,15 +103,20 @@
             font-size: 25px;
             color: aquamarine;
         }
-        #mainBody{
-            /*background-color: transparent !important;*/
-            opacity: 0.25;
-        }
 
+        #mainBody {
+            /*background-color: transparent !important;*/
+            opacity: 0.85;
+        }
     </style>
 </head>
 @*<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">*@
 <body>
+    <div style="position: fixed; z-index: -99; width: 100%; height: 100%; margin-left:-120px; margin-top:-100px;">
+        @*style="position: fixed; z-index: -99; width: 100%; height: 100%"*@
+        <iframe frameborder="0" src="https://www.youtube.com/embed/I81_euY_62I?loop=1&autoplay=1&playlist=I81_euY_62I" onload="this.width=screen.width;this.height=screen.height;"></iframe>
+
+    </div>
     <div>
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
@@ -117,139 +127,99 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#myPage">Bearcat Football</a>
+                    <a class="navbar-brand" href="~/Home/Index">Bearcat Football</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#myPage">HOME</a></li>
-                        <li><a href="#band">SEASONS</a></li>
-                        <li><a href="#contact">CONTACT</a></li>
+                        <li><a href="~/Home/Index">HOME</a></li>
+                        @*<li><a href="#band">SEASONS</a></li>
+                        <li><a href="#contact">CONTACT</a></li>*@
                         <li><a href="~/Home/Glossary">GLOSSARY</a></li>
                         @*<li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>*@
                     </ul>
                 </div>
             </div>
         </nav>
-
-        <div class="wrapper tweak">
-            <div class="overlay">
-                <p>The Overlay Panel</p>
-            </div>
-            <div class="content">
-                <p>
-                    The main Content panel with a motif:
-                    <b>&hearts;</b> <b class="foggy">&spades;</b>
-                </p>
-            </div>
-        </div>
-        <div class ="video-container"> @*style="position: fixed; z-index: -99; width: 100%; height: 100%"*@
-            <iframe frameborder="0"
-                    src="https://www.youtube.com/v/I81_euY_62I?autoplay=1&loop=1&playlist=I81_euY_62I&title=0&byline=0&portrait=0" onload="this.width=screen.width;this.height=screen.height;"></iframe>
-        </div>
-
-        @*<div class="video-container">
-            <iframe src="https://www.youtube.com/v/I81_euY_62I?autoplay=1&loop=1&playlist=I81_euY_62I&title=0&byline=0&portrait=0" allowfullscreen></iframe>
-            <div id="overlay">
-                @*<h3>"The world’s finest wilderness lies beneath the waves …"</h3>
-                <h3>— Wyland, Marine Life Artist</h3>*@
-        @*</div>
-            </div>*@
-
-        @*<div class="jumbotron">
-                <div class="container text-center">
-                    <h1>Bearcat Football</h1>
-                    <p>Data Visualization</p>
-                </div>
-            </div>*@
-
-        @*<nav class="navbar navbar-inverse navbar-fixed-top">
-            
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Logo</a>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="~/Home/Index">Home</a></li>
-                        <li><a href="#">Player Stats</a></li>
-                        <li><a href="#">Roster</a></li>
-                        <li><a href="~/Home/Glossary">Glossary</a></li>
-                        <li><a href="#">Stores</a></li>
-                            <li><a href="#">Contact</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-                        </ul>
-                </div>
-            </div>
-        </nav>*@
-
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <div id="mainBody" class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">2015</div>
-                        @*<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>*@
-                        <div class="panel-footer">Click here to see the stats</div>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">2015</div>
+                            @*<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>*@
+                            <div class="panel-footer"><a href="~/Home/Player_Chart">Click here </a> to see the stats</div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">2014</div>
-                        @*<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>*@
-                        <div class="panel-footer">Click here to see the stats</div>
+                    <div class="col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">2014</div>
+                            @*<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>*@
+                            <div class="panel-footer">Click here to see the stats</div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">2013</div>
-                        @*<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>*@
-                        <div class="panel-footer">Click here to see the stats</div>
-                    </div>
+
                 </div>
             </div>
         </div><br>
+        <div id="mainBody" class="container">
+            <div class="col-sm-12">
+                <div class="row">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">2012</div>
-                        @*<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>*@
-                        <div class="panel-footer">Click here to see the stats</div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">2011</div>
-                        @*<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>*@
-                        <div class="panel-footer">Click here to see the stats</div>
-                    </div>
-                </div>
-                @*<div class="col-sm-4">
+                    <div class="col-sm-6">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+                            <div class="panel-heading">2013</div>
+                            @*<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>*@
+                            <div class="panel-footer">Click here to see the stats</div>
                         </div>
-                    </div>*@
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">2012</div>
+                            @*<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>*@
+                            <div class="panel-footer">Click here to see the stats</div>
+                        </div>
+                    </div>
+                </div>
+
+                @*<div class="col-sm-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">2011</div>*@
+                @*<div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>*@
+                @*<div class="panel-footer">Click here to see the stats</div>
+                         </div>
+                     </div>
+                    <div class="col-sm-4">
+                             <div class="panel panel-primary">
+                                 <div class="panel-heading">BLACK FRIDAY DEAL</div>
+                                 <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+                                 <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+                             </div>
+                         </div>*@
             </div>
         </div><br><br>
     </div>
 
-    <footer class="container-fluid text-center">
-        <p>Northwest Missouri State University Copyright</p>
-        <form class="form-inline">
-            @*<input type="email" class="form-control" size="50" placeholder="Email Address">
-                <button type="button" class="btn btn-danger">Sign Up</button>*@
-        </form>
-    </footer>
+
+
+
+    @*<div class="modal-footer">
+            <p >Northwest Missouri State University Copyright</p>
+        </div>*@
 
 </body>
 </html>
