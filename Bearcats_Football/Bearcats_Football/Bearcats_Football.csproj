@@ -187,6 +187,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\cumulativestatistics.cs" />
     <Compile Include="Models\Passing.cs" />
     <Compile Include="Models\Recieving.cs" />
     <Compile Include="Models\Rushes.cs" />
