@@ -11,16 +11,18 @@ namespace Bearcats_Football.Controllers
     public partial class BarStackedController : Controller
     {
         // GET: BarStacked
-        public ActionResult BarStacked(String name)
+        public ActionResult BarStacked(String name, String year)
         {
+            int yr = Convert.ToInt32(year);
             RushingDBConnection rushingDBConn = new RushingDBConnection();
-            List<Bearcats_Football.Models.Tackles> listTackles = rushingDBConn.getTacklesConnection(name);
+            List<Bearcats_Football.Models.Tackles> listTackles = rushingDBConn.getTacklesConnection(name,yr);
             List<String> opponentsList = new List<string>();
             List<int> soloTackleValues = new List<int>();
             List<int> astTackleValues = new List<int>();
             foreach (Bearcats_Football.Models.Tackles tackle in listTackles)
             {
                 ViewData["playerName"] = tackle._id;
+                ViewData["Year"] = tackle._year;
                 opponentsList.Add(tackle._opponent);
                 astTackleValues.Add(tackle._ast);
                 soloTackleValues.Add(tackle._solo);

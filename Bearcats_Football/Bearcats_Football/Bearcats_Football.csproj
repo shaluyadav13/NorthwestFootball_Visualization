@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/9c8fd129-e328-45d3-b111-e1cb099da99d/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/Bearcats_Football</ApplicationInsightsResourceId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -178,15 +179,18 @@
     <Compile Include="Controllers\AreaBasicController.cs" />
     <Compile Include="Controllers\BarBasicController.cs" />
     <Compile Include="Controllers\BarStackedController.cs" />
+    <Compile Include="Controllers\Column3DNullValuesController.cs" />
     <Compile Include="Controllers\ColumnBasicController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LineBasicController.cs" />
     <Compile Include="Controllers\PieBasicController.cs" />
     <Compile Include="Controllers\PieDrilldownController.cs" />
     <Compile Include="Controllers\WaterfallController.cs" />
+    <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\KickReturns.cs" />
     <Compile Include="Models\Passing.cs" />
     <Compile Include="Models\Recieving.cs" />
     <Compile Include="Models\Rushes.cs" />
@@ -218,6 +222,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\BearcatsFootball - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\BearcatsFootball - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\highcharts-all.js" />
     <Content Include="Scripts\highcharts.src.js" />
@@ -266,6 +272,8 @@
     <Content Include="Views\Home\Player_Chart.cshtml" />
     <Content Include="Views\Home\TempHomePage.cshtml" />
     <Content Include="Views\PieDrilldown\PieDrilldown.cshtml" />
+    <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Views\Column3DNullValues\Column3DNullValues.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -277,6 +285,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
