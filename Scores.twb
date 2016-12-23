@@ -1,0 +1,447 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 9300.16.0511.2203                                -->
+<workbook source-build='9.3.1 (9300.16.0511.2203)' source-platform='win' version='9.3' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Game-by-Game Statistics (2)' inline='true' name='excel-direct.18a26j907jdsha1effihg1pvvabl' version='9.3'>
+      <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:\Users\s525078\Downloads\Game-by-Game Statistics.xlsx' interpretationMode='0' password='' server='' validate='no' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.50104' measure-ordering='alphabetic' measure-percentage='0.49896' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='Game-by-Game Statistics (3)' inline='true' name='excel-direct.0n9718o1ao9ghz13oo3u60hyr7n6' version='9.3'>
+      <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:\Users\s525078\Downloads\Game-by-Game Statistics.xlsx' interpretationMode='0' password='' server='' validate='no' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.501085' measure-ordering='alphabetic' measure-percentage='0.498915' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='Game-by-Game Statistics (4)' inline='true' name='excel-direct.06f5fvf0i0c9ng11j7t4n02zs1cw' version='9.3'>
+      <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:\Users\s525078\Downloads\Game-by-Game Statistics.xlsx' interpretationMode='0' password='' server='' validate='no' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.501312' measure-ordering='alphabetic' measure-percentage='0.498688' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='Game-by-Game Statistics' inline='true' name='excel-direct.16ncdz71oecnrz1e6c2qr1fhgp9d' version='9.3'>
+      <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:\Users\s525078\Downloads\Game-by-Game Statistics.xlsx' interpretationMode='0' password='' server='' validate='no' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.501134' measure-ordering='alphabetic' measure-percentage='0.498866' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='Game-by-Game Statistics (5)' inline='true' name='excel-direct.0xv3wl60cuui020zlzbvm0elvdas' version='9.3'>
+      <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:\Users\s525078\Downloads\Game-by-Game Statistics.xlsx' interpretationMode='0' password='' server='' validate='no' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.501188' measure-ordering='alphabetic' measure-percentage='0.498812' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='Game-by-Game Statistics (6)' inline='true' name='excel-direct.09r5f330ej8xkf1b1awpn1bt3tg3' version='9.3'>
+      <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:\Users\s525078\Downloads\Game-by-Game Statistics.xlsx' interpretationMode='0' password='' server='' validate='no' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.501247' measure-ordering='alphabetic' measure-percentage='0.498753' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='Game-by-Game Statistics (7)' inline='true' name='excel-direct.0ou9o0e0ijqfbt10ciuoj0whzu2j' version='9.3'>
+      <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:\Users\s525078\Downloads\Game-by-Game Statistics.xlsx' interpretationMode='0' password='' server='' validate='no' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.501312' measure-ordering='alphabetic' measure-percentage='0.498688' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='Data For Team Winning (Game-by-Game Statistics.2)' inline='true' name='excel-direct.0ulcjsj1tysfh41a2w3fc0lbqcmb' version='9.3'>
+      <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:\Users\s525078\Desktop\Game-by-Game Statistics.2.xlsx' interpretationMode='0' password='' server='' validate='no'>
+        <relation name='Data For Team Winning' table='[&apos;Data For Team Winning$&apos;]' type='table'>
+          <columns gridOrigin='A1:D16:no:A1:D16:0' header='yes' outcome='6'>
+            <column datatype='string' name='Place' ordinal='0' />
+            <column datatype='string' name='OPPONENT' ordinal='1' />
+            <column datatype='integer' name='SCORE' ordinal='2' />
+            <column datatype='integer' name='Opposite scored' ordinal='3' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Place</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Place]</local-name>
+            <parent-name>[Data For Team Winning]</parent-name>
+            <remote-alias>Place</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OPPONENT</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[OPPONENT]</local-name>
+            <parent-name>[Data For Team Winning]</parent-name>
+            <remote-alias>OPPONENT</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SCORE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SCORE]</local-name>
+            <parent-name>[Data For Team Winning]</parent-name>
+            <remote-alias>SCORE</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Opposite scored</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Opposite scored]</local-name>
+            <parent-name>[Data For Team Winning]</parent-name>
+            <remote-alias>Opposite scored</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Data For Team Winning]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:D16:no:A1:D16:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Opponent' datatype='string' name='[OPPONENT]' role='dimension' type='nominal' />
+      <column caption='Score' datatype='integer' name='[SCORE]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.480315' measure-ordering='alphabetic' measure-percentage='0.519685' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Data For Team Winning (Game-by-Game Statistics.2)' name='excel-direct.0ulcjsj1tysfh41a2w3fc0lbqcmb' />
+          </datasources>
+          <datasource-dependencies datasource='excel-direct.0ulcjsj1tysfh41a2w3fc0lbqcmb'>
+            <column caption='Opponent' datatype='string' name='[OPPONENT]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Opposite scored]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Place]' role='dimension' type='nominal' />
+            <column caption='Score' datatype='integer' name='[SCORE]' role='measure' type='quantitative' />
+            <column-instance column='[OPPONENT]' derivation='None' name='[none:OPPONENT:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Place]' derivation='None' name='[none:Place:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Opposite scored]' derivation='Sum' name='[sum:Opposite scored:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[SCORE]' derivation='Sum' name='[sum:SCORE:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='8'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <lod column='[excel-direct.0ulcjsj1tysfh41a2w3fc0lbqcmb].[none:OPPONENT:nk]' />
+            </encodings>
+          </pane>
+          <pane id='9' y-axis-name='[excel-direct.0ulcjsj1tysfh41a2w3fc0lbqcmb].[sum:SCORE:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <lod column='[excel-direct.0ulcjsj1tysfh41a2w3fc0lbqcmb].[none:OPPONENT:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.42779004573822021' />
+                <format attr='mark-color' value='#67b986' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='10' y-axis-name='[excel-direct.0ulcjsj1tysfh41a2w3fc0lbqcmb].[sum:Opposite scored:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <encodings>
+              <lod column='[excel-direct.0ulcjsj1tysfh41a2w3fc0lbqcmb].[none:OPPONENT:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#f1923e' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([excel-direct.0ulcjsj1tysfh41a2w3fc0lbqcmb].[sum:Opposite scored:qk] + [excel-direct.0ulcjsj1tysfh41a2w3fc0lbqcmb].[sum:SCORE:qk])</rows>
+        <cols>([excel-direct.0ulcjsj1tysfh41a2w3fc0lbqcmb].[none:Place:nk] / [excel-direct.0ulcjsj1tysfh41a2w3fc0lbqcmb].[none:OPPONENT:nk])</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='168'>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[excel-direct.0ulcjsj1tysfh41a2w3fc0lbqcmb].[:Measure Names]</field>
+            <field>[excel-direct.0ulcjsj1tysfh41a2w3fc0lbqcmb].[none:OPPONENT:nk]</field>
+            <field>[excel-direct.0ulcjsj1tysfh41a2w3fc0lbqcmb].[none:Place:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
